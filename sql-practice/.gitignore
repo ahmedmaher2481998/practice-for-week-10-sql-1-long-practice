@@ -1,2 +1,4 @@
 coffee-shop.db
 the-office.db
+.env
+node_modules
