@@ -10,7 +10,7 @@ CREATE table customers(
   phone NUMERIC(10, 0) UNIQUE,
   email varchar(255) UNIQUE,
   points INTEGER DEFAULT 5,
-  created_at TIMESTAMP NOT NULL
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE table coffee(
@@ -21,7 +21,14 @@ CREATE table coffee(
 CREATE TABLE coffee_orders(
   customer_id INTEGER,
   coffee_id INTEGER,
-  is_redeemed vrachr(100) DEFAULT "not redeemed",
-  ordered_at TIMESTAMP,
-  FOREIGN KEY (ordered_at) REFERENCES customers(created_at) FOREIGN KEY (customer_id) REFERENCES customers(id) FOREIGN KEY (coffee_id) REFERENCES coffee(id)
+  is_redeemed NUMERIC(1, 0) DEFAULT 0,
+  ordered_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (coffee_id) REFERENCES coffee(id) FOREIGN KEY (customer_id) REFERENCES customers(id) FOREIGN KEY (coffee_id) REFERENCES coffee(id)
 );
+
+INSERT INTO
+  coffee (name)
+VALUES
+  ("coffee regular"),
+  ("coffee with milk"),
+  ("Esspersso coffee");
