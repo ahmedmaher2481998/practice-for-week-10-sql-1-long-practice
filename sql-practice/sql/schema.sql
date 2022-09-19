@@ -26,6 +26,7 @@ CREATE TABLE coffee_orders(
   FOREIGN KEY (coffee_id) REFERENCES coffee(id) FOREIGN KEY (customer_id) REFERENCES customers(id) FOREIGN KEY (coffee_id) REFERENCES coffee(id)
 );
 
+-- seeding the coffee table 
 INSERT INTO
   coffee (name)
 VALUES
