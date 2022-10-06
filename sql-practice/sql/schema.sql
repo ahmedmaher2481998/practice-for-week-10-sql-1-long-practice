@@ -1,3 +1,4 @@
+--  Droping the Previous DB
 DROP table if exists coffee_orders;
 
 DROP TABLE if EXISTS coffee;
@@ -23,7 +24,9 @@ CREATE TABLE coffee_orders(
   coffee_id INTEGER,
   is_redeemed NUMERIC(1, 0) DEFAULT 0,
   ordered_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (coffee_id) REFERENCES coffee(id) FOREIGN KEY (customer_id) REFERENCES customers(id) FOREIGN KEY (coffee_id) REFERENCES coffee(id)
+  FOREIGN KEY (coffee_id) REFERENCES coffee(id),
+  FOREIGN KEY (customer_id) REFERENCES customers(id),
+  FOREIGN KEY (coffee_id) REFERENCES coffee(id),
 );
 
 -- seeding the coffee table 
