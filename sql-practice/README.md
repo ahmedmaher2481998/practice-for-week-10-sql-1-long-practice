@@ -16,3 +16,23 @@ coffee{
 id:
 name:
 }
+
+# the office
+
+employee=
+id
+first name
+last name
+department
+role
+
+romance
+performance review
+id
+employee_id
+score out of 1 0
+
+party
+id
+budget
+on/off site
