@@ -22,6 +22,7 @@ CREATE table coffee(
 );
 
 CREATE TABLE coffee_orders(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
   customer_id INTEGER,
   coffee_id INTEGER,
   is_redeemed NUMERIC(1, 0) DEFAULT 0,
